@@ -1,0 +1,350 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --bg-light: #f8f9fa;
+    --text-color: #333;
+    --bg-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* 头部样式 */
+.header {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    padding: 0 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 1000;
+}
+
+.nav {
+    position: fixed;
+    right: 40px;
+    top: 20px;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1.5rem;
+    text-align: right;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+
+/* 轮播图样式 */
+.carousel {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    margin-top: 70px;
+    background-color: var(--bg-light);
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-color: var(--primary-color);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: var(--bg-light);
+    padding: 20px 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+}
+
+/* 个人简介样式 */
+.about {
+    padding: 6rem 2rem;
+    background-color: var(--bg-light);
+}
+
+.profile-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    flex-shrink: 0;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 社交媒体样式 */
+.social {
+    background: var(--primary-color);
+    padding: 4rem 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 2.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 0.8;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.wechat .qr-code {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.wechat:hover .qr-code {
+    display: block;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 1.5rem;
+        top: 10px;
+    }
+
+    .nav {
+        right: 20px;
+        top: 10px;
+    }
+
+    .nav ul {
+        gap: 1.2rem;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+        padding: 0 1rem;
+    }
+
+    .carousel {
+        height: 70vh;
+        margin-top: 55px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav a {
+        font-size: 1rem;
+    }
+
+    .profile-content h2 {
+        font-size: 2rem;
+    }
+
+    .profile-content p {
+        font-size: 1.15rem;
+    }
+
+    .social-icon {
+        font-size: 1.8rem;
+    }
+} 
+
+/* 为每个轮播图添加不同的背景色 */
+.carousel-slide:nth-child(1) { background-color: var(--primary-color); }
+.carousel-slide:nth-child(2) { background-color: var(--secondary-color); }
+.carousel-slide:nth-child(3) { background-color: var(--accent-color); } 
+
+/* 添加轮播点样式 */
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: white;
+}
+
+/* 改进轮播按钮样式 */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.carousel:hover .carousel-btn {
+    opacity: 1;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* 添加默认头像背景 */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+}
+
+/* 如果没有图片，显示首字母 */
+.profile-image:empty::before {
+    content: "U";  /* U for User */
+} 
+
+/* 添加平滑滚动效果 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 优化文字排版 */
+.profile-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.profile-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1rem;
+} 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="618一家人的个人主页">
+    <title>618一家人 - 个人主页</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="logo">
+            <a href="/" aria-label="首页">
+                <h1>618一家人</h1>
+            </a>
+        </div>
+        <nav class="nav" aria-label="主导航">
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 轮播图部分 -->
+        <section class="carousel" id="home" aria-label="图片轮播">
+            <div class="carousel-container">
+                <div class="carousel-slide active" aria-hidden="false">
+                    <img src="imgs/image1.jpg" alt="轮播图片1的具体描述">
+                </div>
+                <div class="carousel-slide">
+                    <img src="imgs/image2.jpg" alt="Slide 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="imgs/image3.jpg" alt="Slide 3">
+                </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="上一张图片"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" aria-label="下一张图片"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots"></div>
+        </section>
+
+        <!-- 个人简介 -->
+        <section class="about" id="about" aria-labelledby="about-title">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="imgs/avatar.jpg" alt="个人头像">
+                </div>
+                <div class="profile-content">
+                    <h2 id="about-title">关于我们</h2>
+                    <p>你好！我们是一名热爱创造的开发者。我专注于网站开发和用户体验设计，致力于创造简洁优雅的数字体验。</p>
+                    <p>在这里，你可以了解我的项目经历和专业技能。我期待能与你交流合作！</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 社交媒体 -->
+    <footer class="social" id="contact">
+        <div class="social-icons">
+            <a href="#" class="social-icon wechat" aria-label="微信">
+                <i class="fab fa-weixin"></i>
+                <div class="qr-code">
+                    <img src="imgs/wechat-qr.jpg" alt="微信二维码">
+                </div>
+            </a>
+            <a href="#" class="social-icon" aria-label="微博"><i class="fab fa-weibo"></i></a>
+            <a href="#" class="social-icon" aria-label="领英"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
